@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Perso</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header>
+        <h1>Bienvenue sur ma page</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#hobbies">Mes loisirs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== À propos ===== -->
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Technicien Supérieur en Informatique.</p>
+        <img src="IMG_1936.jpeg" alt="Ma photo">
+    </section>
+
+    <!-- ===== Loisirs ===== -->
+    <section id="hobbies">
+        <h2>Mes loisirs</h2>
+        <ul>
+            <li>Lire des livres</li>
+            <li>Jouer au football</li>
+            <li>Coder des petits projets</li>
+        </ul>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:diallaousmane91@gmail.com">diallaousmane91@gmail.com</a></p>
+        
+        <form action="#" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="7" placeholder="Votre message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2025 Ma Page Perso</p>
+    </footer>
+
+</body>
+</html>
