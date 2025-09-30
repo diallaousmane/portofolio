@@ -47,13 +47,13 @@ img {
     display: block;
 }
 
-/* Conteneur bouton */
+
 .btn-container {
     text-align: center;
     margin-top: 40px;
 }
 
-/* Bouton rouge */
+
 .btn-retour {
     background-color: #e74c3c;
     color: white;
@@ -67,4 +67,5 @@ img {
 
 .btn-retour:hover {
     background-color: #c0392b;
+
 }
