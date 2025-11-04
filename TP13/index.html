@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Facture Apple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img src="Under.png" width="80">
+
+  <p>Date création : 15/11/22<br>
+  N° Facture :</p>
+
+  <h3>Destinataire</h3>
+  <p>
+    Nom<br>
+    Nom de la société<br>
+    Adresse Postale<br>
+    Téléphone<br>
+    Email
+  </p>
+
+  <h3>Envoyer à</h3>
+  <p>
+    Nom<br>
+    Nom de la société<br>
+    Adresse Postale<br>
+    Téléphone<br>
+    Email
+  </p>
+
+  <table border="1">
+    <tr>
+      <th>Article</th>
+      <th>Quantité</th>
+      <th>Prix</th>
+      <th>Résultat</th>
+    </tr>
+    <tr>
+      <td><input type="text" value="e1"></td>
+      <td><input type="number" id="q1" value="12"></td>
+      <td><input type="number" id="p1" value="4"></td>
+      <td><input type="text" id="r1" readonly></td> <!-- readonly = l'utilisateur ne peut pas écrire dedans -->
+    </tr>
+    <tr>
+      <td><input type="text" value="e2"></td>
+      <td><input type="number" id="q2" value="4"></td>
+      <td><input type="number" id="p2" value="4"></td>
+      <td><input type="text" id="r2" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="text" value="e3"></td>
+      <td><input type="number" id="q3" value="12"></td>
+      <td><input type="number" id="p3" value="5"></td>
+      <td><input type="text" id="r3" readonly></td>
+    </tr>
+  </table>
+
+  <br>
+  <button onclick="calculer()">résultat</button>
+  <button onclick="reinit()">réinitialiser</button>
+  <input type="text" id="total" placeholder="total" readonly>
+
+  <script src="script.js"></script>
+</body>
+</html>
