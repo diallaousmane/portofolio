@@ -1,0 +1,112 @@
+/* Code réalisé par : [TON NOM] [TON PRENOM] */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #008080; /* Teal color de la maquette */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.info-client {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #dbecef; /* Bleu clair */
+    padding: 15px;
+}
+
+.box {
+    width: 45%;
+}
+
+.box input {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #999;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background-color: #008080;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style des inputs dans le tableau */
+.input {
+    width: 95%;
+    padding: 8px;
+    border: none;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #dbecef;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.remarques {
+    width: 50%;
+}
+
+.totaux {
+    width: 40%;
+    text-align: right;
+}
+
+.ligne-total {
+    margin-bottom: 5px;
+}
+
+.ligne-total input {
+    text-align: right;
+    width: 100px;
+}
+
+.grand-total label {
+    font-weight: bold;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #999;
+}
+
+button:hover {
+    background-color: #ddd;
+}

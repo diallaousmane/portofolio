@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission 11 - Module de Facturation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="https://via.placeholder.com/50" alt="Logo" />
+        <div>
+          <h3>Nom de la compagnie</h3>
+          <p>Adresse Postale<br />Code Postal, Ville</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <h1>FACTURE</h1>
+        <p>Date: <span id="dateJour"></span></p>
+        <p>N° Facture: #12345</p>
+      </div>
+    </header>
+
+    <section class="info-client">
+      <div class="box">
+        <h4>Destinataire</h4>
+        <input type="text" placeholder="Nom" />
+        <input type="text" placeholder="Nom de la société" />
+        <input type="text" placeholder="Adresse postale" />
+        <input type="text" placeholder="Téléphone" />
+        <input type="email" placeholder="Email" />
+      </div>
+      <div class="box">
+        <h4>Envoyer à</h4>
+        <input type="text" placeholder="Nom" />
+        <input type="text" placeholder="Nom de la société" />
+        <input type="text" placeholder="Adresse postale" />
+        <input type="text" placeholder="Téléphone" />
+        <input type="email" placeholder="Email" />
+      </div>
+    </section>
+
+    <table id="table_inv">
+      <thead>
+        <tr>
+          <th width="50%">DESCRIPTION</th>
+          <th>QUANTITÉ</th>
+          <th>PRIX UNITAIRE</th>
+          <th>TOTAL</th>
+        </tr>
+      </thead>
+      <tbody id="corpsTableau">
+        <tr class="row" id="modeleLigne">
+          <td>
+            <input
+              type="text"
+              name="desc"
+              class="input desc"
+              placeholder="Description du produit"
+            />
+          </td>
+          <td>
+            <input type="number" name="qte" class="input qte" value="0" />
+          </td>
+          <td>
+            <input type="number" name="prix" class="input prix" value="0.00" />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="total"
+              class="input totalLigne"
+              readonly
+              value="0.00"
+            />
+          </td>
+        </tr>
+
+        <tr class="row lastrow" id="lastLigne">
+          <td colspan="4"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-section">
+      <div class="remarques">
+        <p>Remarques, notes et instructions de paiement</p>
+        <textarea rows="4" style="width: 100%"></textarea>
+      </div>
+
+      <div class="totaux">
+        <div class="ligne-total">
+          <label>SOUS-TOTAL</label>
+          <input type="text" id="sousTotal" readonly value="0.00" />
+        </div>
+        <div class="ligne-total">
+          <label>REMISE (%)</label>
+          <input type="number" id="remise" value="10.00" />
+        </div>
+        <div class="ligne-total">
+          <label>SOUS-TOTAL MOINS LES REMISES</label>
+          <input type="text" id="sousTotalRemise" readonly value="0.00" />
+        </div>
+        <div class="ligne-total">
+          <label>TAUX D'IMPOSITION (%)</label>
+          <input type="number" id="tauxImpot" value="10.00" />
+        </div>
+        <div class="ligne-total">
+          <label>TAXE TOTALE</label>
+          <input type="text" id="taxeTotale" readonly value="0.00" />
+        </div>
+        <div class="ligne-total">
+          <label>EXPÉDITION, MANUTENTION</label>
+          <input type="number" id="fraisExp" value="5.00" />
+        </div>
+        <div class="ligne-total grand-total">
+          <label>SOLDE DU</label>
+          <input
+            type="text"
+            id="soldeFinal"
+            readonly
+            value="0.00 €"
+            style="background-color: #ffcccc"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button onclick="calculate()">Calculer</button>
+      <button onclick="ajouterLigne()">Ajouter une ligne</button>
+      <button onclick="remplir()">Remplir automatiquement</button>
+      <button onclick="window.location.reload()">Annuler</button>
+    </div>
+  </body>
+</html>
