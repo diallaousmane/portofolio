@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio - Mission 10 BDD</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 40px;
+      }
+      h1 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #444;
+        margin-top: 30px;
+      }
+      .box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      code {
+        background-color: #eef;
+        color: #0056b3;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      .sql-block {
+        background-color: #2d2d2d;
+        color: #ccc;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+      }
+      .sql-keyword {
+        color: #cc99cd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mission 10 : Conception Base de Données Cinéma</h1>
+
+    <div class="box">
+      <h2>1. Optimisation du modèle de données</h2>
+      <p>
+        L'analyse du schéma initial a révélé une anomalie : la table
+        <code>film</code> comportait le nom du pays en toutes lettres ("France",
+        "Etats-Unis"), ce qui créait une redondance avec la table
+        <code>pays</code> existante.
+        <br />
+        <strong>Action corrective :</strong> J'ai remplacé la colonne texte par
+        une clé étrangère (<code>IDENT_PAYS</code>) de type entier, pointant
+        directement vers la table de référence.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>2. Implémentation technique</h2>
+      <p>
+        La base <code>mission_cinema_ugc</code> a été structurée autour de 5
+        entités :
+      </p>
+      <ul>
+        <li>
+          <strong>Entités principales :</strong> Film, Acteur, Réalisateur,
+          Pays.
+        </li>
+        <li>
+          <strong>Relation :</strong> La table <code>casting</code> fait le lien
+          entre les films et les acteurs (clé primaire composite).
+        </li>
+      </ul>
+      <p>
+        Les contraintes d'intégrité (Foreign Keys) ont été activées pour
+        garantir la cohérence des données lors des insertions.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>3. Requêtes d'extraction SQL</h2>
+
+      <h3>Recherche multicritères (Durée et Date)</h3>
+      <p>Critères : Films > 90 min sortis entre 2008 et 2012.</p>
+      <div class="sql-block">
+        SELECT TITRE FROM film WHERE DUREE > 90 AND DATE_SORTIE BETWEEN
+        '2008-01-01' AND '2012-12-31';
+      </div>
+      <p><em>Résultat obtenu : AVATAR</em></p>
+
+      <h3>Filtrage sur données numériques</h3>
+      <p>
+        Objectif : Lister les acteurs ayant une filmographie comprise entre 40
+        et 90 titres.
+      </p>
+      <div class="sql-block">
+        SELECT NOM, PRENOM FROM acteur WHERE NB_FILM BETWEEN 40 AND 90;
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>4. Mise à jour de la base</h2>
+      <p>
+        Pour l'ajout du film "Bienvenue chez les Chti's", une double insertion a
+        été nécessaire : création du réalisateur Dany Boon, puis insertion du
+        film en référençant ce nouveau réalisateur et le pays France (ID 1).
+      </p>
+    </div>
+  </body>
+</html>
