@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ousmane Dialla – Portfolio BTS SIO SISR</title>
+<meta name="description" content="Portfolio de Dialla Ousmane, étudiant en BTS SIO option SISR : stage, projets, tableau de compétences et veille technologique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E9EEF0;--panel:#D3DCE0;--ink:#14232B;--mute:#4A5C66;--teal:#0E7C86;--cable:#E8590C;--white:#fff;--r:6px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--cable);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--paper)}
+header.top .wrap{display:flex;gap:6px;align-items:center;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+header.top b{font-family:"Bricolage Grotesque",sans-serif;margin-right:auto;white-space:nowrap;padding-right:16px}
+.port{color:var(--paper);text-decoration:none;font-size:.9rem;padding:6px 10px 6px 24px;border-radius:var(--r);position:relative;white-space:nowrap}
+.port::before{content:"";position:absolute;left:8px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:2px;background:#5D727C}
+.port:hover,.port:focus-visible{background:#223945}
+.port:hover::before{background:var(--cable)}
+.hero{padding:64px 0 40px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:800;letter-spacing:-.02em}
+.hero p.lead{max-width:60ch;margin-top:18px;font-size:1.2rem;color:var(--mute)}
+.rack{margin-top:36px;background:var(--panel);border:2px solid var(--ink);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:repeat(12,1fr);gap:8px}
+.rack i{aspect-ratio:1.2;background:var(--ink);border-radius:3px;position:relative}
+.rack i::after{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:#33474F}
+.rack i.on::after{background:#3DDC84}
+.rack i.cb{box-shadow:0 0 0 0 var(--cable);background:linear-gradient(var(--ink) 55%,var(--cable) 55%)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:var(--r);background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+section{padding:56px 0;border-top:2px solid var(--panel)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:8px}
+.sub{color:var(--mute);max-width:65ch;margin-bottom:28px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.card{background:var(--white);border-radius:var(--r);padding:20px;border-left:6px solid var(--teal)}
+.card.ap{border-color:var(--cable)}
+.card h3{font-size:1.2rem;margin-bottom:4px}
+.date{font-size:.85rem;color:var(--mute);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:.8rem;background:var(--panel);padding:2px 9px;border-radius:99px}
+ul.plain{padding-left:1.1rem}
+ul.plain li{margin:4px 0}
+.two{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.scroll{overflow-x:auto;background:var(--white);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.95rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--panel);vertical-align:top}
+th{background:var(--ink);color:var(--paper);font-weight:600}
+td.c,th.c{text-align:center;width:48px}
+td.c.x{color:var(--cable);font-weight:700}
+tr.grp td{background:var(--panel);font-weight:600}
+.legend{display:grid;gap:4px 24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px;font-size:.92rem}
+.legend b{color:var(--cable)}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--white);border-radius:var(--r);padding:14px 16px 14px 56px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700}
+.note{background:#FFF3E8;border-left:6px solid var(--cable);padding:12px 16px;border-radius:var(--r);margin-bottom:20px;font-size:.95rem}
+footer{background:var(--ink);color:var(--paper);padding:32px 0;margin-top:20px}
+footer a{color:#7FD6DE}
+@media(max-width:560px){.rack{grid-template-columns:repeat(6,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<b>O. Dialla</b>
+<a class="port" href="#apropos">À propos</a>
+<a class="port" href="#stage">Stage</a>
+<a class="port" href="#projets">Projets</a>
+<a class="port" href="#competences">Compétences</a>
+<a class="port" href="#veille">Veille</a>
+<a class="port" href="#documents">Documents</a>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<h1>Ousmane Dialla</h1>
+<p class="lead">Étudiant en BTS Services Informatiques aux Organisations, option SISR (Solutions d'Infrastructure, Systèmes et Réseaux), au Lycée Parc de Vilgenis à Massy. Je construis ici la preuve de mon parcours : stage, projets de formation et veille.</p>
+<div class="rack" aria-hidden="true">
+<i class="on"></i><i class="on cb"></i><i class="on"></i><i></i><i class="on"></i><i class="on cb"></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on cb"></i><i class="on"></i>
+</div>
+<div class="cta">
+<a class="btn" href="#stage">Voir mon stage</a>
+<a class="btn alt" href="#competences">Tableau de compétences</a>
+</div>
+</div>
+
+<section id="apropos"><div class="wrap">
+<h2>À propos</h2>
+<p class="sub">Je m'oriente vers le métier de technicien systèmes et réseaux. Mon stage à La Plateforme du Bâtiment a confirmé ce choix : préparation de postes, gestion de parc, assistance utilisateurs et découverte d'une infrastructure réseau multi-sites.</p>
+<div class="two">
+<div class="card"><h3>Formation</h3><ul class="plain"><li>BTS SIO option SISR, 1re année (2025-2026)</li><li>Lycée Parc de Vilgenis, Massy (91)</li><li>Session 2026</li></ul></div>
+<div class="card"><h3>Ce que je sais faire</h3><ul class="plain"><li>Déployer un poste à partir d'une image Windows standardisée</li><li>Inventorier un parc avec GLPI</li><li>Prendre la main à distance (Genesix, ADTools)</li><li>Configurer filtrage, DMZ, AD et DHCP en laboratoire</li></ul></div>
+</div>
+</div></section>
+
+<section id="stage"><div class="wrap">
+<h2>Stage à La Plateforme du Bâtiment</h2>
+<p class="sub">Du 1er juin au 3 juillet 2026, au service informatique du siège (Paris 19e). Maître de stage : M. Lamine Drame, technicien informatique.</p>
+<div class="two">
+<div>
+<h3>L'entreprise</h3>
+<p style="margin:8px 0 20px">Enseigne de distribution de matériaux pour les professionnels du bâtiment, avec plusieurs sites en Île-de-France. Le service informatique gère postes, téléphonie, réseau, sécurité et assistance pour tous les sites.</p>
+<h3>Le système d'information</h3>
+<ul class="plain" style="margin-top:8px">
+<li>Salle informatique avec baie de brassage, deux cœurs de switch redondants et deux pare-feu</li>
+<li>Téléphonie Alcatel-Lucent OmniPCX Office</li>
+<li>Fibre → boîtier RAD → switch cœur → switch data → postes</li>
+<li>Parc : ThinkPad Lenovo, PDA Honeywell CT45, iPhone et Samsung Galaxy</li>
+<li>Windows 11 déployé par image standardisée</li>
+</ul>
+</div>
+<div>
+<h3>Outils utilisés</h3>
+<div class="tags" style="margin-bottom:24px"><span>GLPI</span><span>Genesix</span><span>ADTools</span><span>LAPS</span><span>BitLocker</span><span>Cisco Secure Client</span><span>Patch Inspector</span><span>Lenovo Vantage</span><span>Teams / Outlook</span></div>
+<h3>Missions réalisées</h3>
+<ul class="plain" style="margin-top:8px">
+<li>Installation et préparation de postes pour de nouveaux collaborateurs</li>
+<li>Audit des salles de réunion du siège</li>
+<li>Installation d'équipements, câblage et montage d'écrans</li>
+<li>Gestion de parc et inventaire sur GLPI</li>
+<li>Traitement d'un incident sur les bornes Wi-Fi d'un magasin</li>
+<li>Assistance utilisateurs et administration à distance</li>
+<li>Découverte du réseau et de la sécurité, visite du site de La Courneuve</li>
+</ul>
+</div>
+</div>
+
+<h3 style="margin:36px 0 12px">Mission phare : préparer et sécuriser un poste pour un nouvel employé</h3>
+<ol class="steps">
+<li><b>Démarrage et image.</b> Accès au menu de démarrage (BIOS/UEFI), vérification du matériel puis réinstallation depuis l'image Windows de l'entreprise pour obtenir une configuration standard.</li>
+<li><b>Certificats réseau.</b> Déploiement des certificats en ligne de commande pour que le poste s'authentifie sur le réseau interne.</li>
+<li><b>Droits administrateur.</b> Récupération du mot de passe administrateur local via LAPS, unique pour chaque machine et renouvelé régulièrement.</li>
+<li><b>Outils métiers.</b> Configuration de Teams et Outlook, installation de Genesix et de Lenovo Vantage, association au compte de l'utilisateur.</li>
+<li><b>Remise.</b> Poste prêt à l'emploi remis au collaborateur, avec un accompagnement au départ puis une autonomie progressive sur les postes suivants.</li>
+</ol>
+
+<h3 style="margin:36px 0 12px">Ce que j'en retiens</h3>
+<p>Un processus complet, du démarrage à la remise du poste. Difficultés rencontrées : prise en main de Genesix et ADTools, lecture du schéma de raccordement de la baie. Elles ont été levées grâce à l'équipe. J'ai développé autonomie, rigueur dans les procédures et aisance dans les échanges avec l'équipe informatique.</p>
+</div></section>
+
+<section id="projets"><div class="wrap">
+<h2>Projets de formation (AP)</h2>
+<p class="sub">Réalisations en cours de formation, en première année.</p>
+<div class="grid">
+<article class="card ap"><h3>AP Louvre : filtrage, DMZ, serveur Web</h3><div class="date">25/02/2026 – 11/03/2026</div><p>Mise en place du filtrage réseau, d'une DMZ et d'un serveur Web.</p><div class="tags"><span>Pare-feu</span><span>DMZ</span><span>Serveur Web</span></div></article>
+<article class="card ap"><h3>AP Louvre : services internes</h3><div class="date">18/03/2026 – 01/04/2026</div><p>Déploiement des services internes : Active Directory, DHCP et services associés.</p><div class="tags"><span>Active Directory</span><span>DHCP</span></div></article>
+<article class="card ap"><h3>Projet d'extension d'une architecture</h3><div class="date">16/04/2026 – 07/05/2026</div><p>Extension d'une architecture réseau existante, en mode projet.</p><div class="tags"><span>Architecture</span><span>Gestion de projet</span></div></article>
+<article class="card ap"><h3>TP : déployer un serveur Debian</h3><div class="date">12/02/2026</div><p>Installation et déploiement d'un serveur Debian.</p><div class="tags"><span>Debian</span><span>Linux</span></div></article>
+</div>
+</div></section>
+
+<section id="competences"><div class="wrap">
+<h2>Tableau de synthèse des compétences</h2>
+<p class="sub">Chaque réalisation est reliée aux blocs de compétences du référentiel BTS SIO. Version officielle disponible dans la section Documents.</p>
+<div class="scroll"><table>
+<thead><tr><th>Réalisation</th><th>Période</th><th class="c" title="Gérer le patrimoine informatique">A</th><th class="c" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">B</th><th class="c" title="Développer la présence en ligne de l'organisation">C</th><th class="c" title="Travailler en mode projet">D</th><th class="c" title="Mettre à disposition des utilisateurs un service informatique">E</th><th class="c" title="Organiser son développement professionnel">F</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="8">En cours de formation</td></tr>
+<tr><td>AP Louvre : filtrage, DMZ, serveur Web</td><td>25/02 – 11/03/26</td><td class="c x">X</td><td class="c"></td><td class="c x">X</td><td class="c x">X</td><td class="c x">X</td><td class="c"></td></tr>
+<tr><td>AP Louvre : service interne (AD, DHCP…)</td><td>18/03 – 01/04/26</td><td class="c x">X</td><td class="c x">X</td><td class="c"></td><td class="c x">X</td><td class="c x">X</td><td class="c"></td></tr>
+<tr><td>Projet extension d'une architecture</td><td>16/04 – 07/05/26</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c x">X</td><td class="c"></td></tr>
+<tr><td>TP Déployer un serveur Debian</td><td>12/02/26</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c"></td></tr>
+<tr class="grp"><td colspan="8">En milieu professionnel (stage 1re année)</td></tr>
+<tr><td>Installation et préparation de postes de travail</td><td>01/06 – 03/07/26</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c x">X</td></tr>
+<tr><td>Gestion de parc et inventaire GLPI</td><td>09/06 – 03/07/26</td><td class="c x">X</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Assistance utilisateurs et administration à distance</td><td>16/06 – 03/07/26</td><td class="c"></td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c"></td></tr>
+<tr><td>Découverte de l'infrastructure réseau et sécurité</td><td>23/06 – 03/07/26</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c x">X</td></tr>
+<tr><td>Traitement d'incident réseau sur bornes AP</td><td>13/06 – 03/07/26</td><td class="c"></td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c"></td></tr>
+<tr><td>Audit des salles de réunion</td><td>03/06 – 03/07/26</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Installation d'équipements et câblage</td><td>05/06 – 03/07/26</td><td class="c x">X</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c x">X</td><td class="c"></td></tr>
+</tbody></table></div>
+<div class="legend">
+<span><b>A</b> Gérer le patrimoine informatique</span>
+<span><b>B</b> Répondre aux incidents et aux demandes d'assistance</span>
+<span><b>C</b> Développer la présence en ligne</span>
+<span><b>D</b> Travailler en mode projet</span>
+<span><b>E</b> Mettre à disposition un service informatique</span>
+<span><b>F</b> Organiser son développement professionnel</span>
+</div>
+</div></section>
+
+<section id="veille"><div class="wrap">
+<h2>Veille technologique</h2>
+<p class="sub">Thème : l'avancement de la sécurité réseau et de la cybersécurité en Afrique. Je suis ce sujet dans la presse en ligne, tous les jours ou tous les 2 jours. Les données ci-dessous viennent des articles cités, parus en 2026.</p>
+
+<h3 style="margin-bottom:12px">Organisation de la veille</h3>
+<div class="grid" style="margin-bottom:36px">
+<article class="card"><h3>Rythme</h3><ul class="plain"><li>Je consulte la presse tous les jours ou tous les 2 jours</li><li>Environ 15 minutes par séance</li><li>Je note les articles importants dans une fiche datée</li></ul></article>
+<article class="card"><h3>Support : la presse en ligne</h3><ul class="plain"><li>CIO Mag (actualité IT en Afrique)</li><li>Cybersecurity Mag Africa</li><li>Digital Mag Côte d'Ivoire</li><li>Infos-IT</li></ul></article>
+<article class="card"><h3>Méthode</h3><ul class="plain"><li>Je trie : menaces, lois, formation, coopération</li><li>Je retiens les chiffres et les faits vérifiables</li><li>Je relie chaque information à mon métier de technicien SISR</li></ul></article>
+</div>
+
+<h3 style="margin-bottom:12px">Ce que montre ma veille</h3>
+<div class="grid">
+<article class="card"><h3>Les menaces montent vite</h3><p>Selon le rapport INTERPOL 2026 (African Cyberthreat Assessment), les pertes déclarées par les pays répondants sont passées de 192 à 484 millions de dollars entre 2024 et 2025, et le nombre de victimes identifiées de 35 000 à 87 000. Environ 55 % des cybercrimes signalés impliquent désormais l'intelligence artificielle.</p><div class="tags"><span>INTERPOL 2026</span></div></article>
+<article class="card"><h3>Les États renforcent le cadre légal</h3><p>Quatre pays répondants sur cinq ont une loi dédiée à la cybercriminalité. En 2025, dix-sept pays ont adopté ou modifié leur législation : la Côte d'Ivoire a voté une loi sur la sécurité numérique, Maurice a créé une agence de cyber-résilience et l'Angola un centre national de cybersécurité.</p><div class="tags"><span>Lois</span><span>Agences nationales</span></div></article>
+<article class="card"><h3>Le manque de compétences</h3><p>Le rapport Mastercard Cyber Pulse 2026 compte seulement 20 000 professionnels certifiés sur le continent. Une tribune de CIO Mag indique que près de 70 % des dirigeants d'Afrique subsaharienne estiment manquer de compétences en cybersécurité, contre 33 % en Europe.</p><div class="tags"><span>Formation</span><span>Métiers</span></div></article>
+<article class="card"><h3>Des attaques ciblées</h3><p>Le Nigeria, l'Afrique du Sud et le Maroc sont parmi les cibles principales de la région. Les attaques visent de plus en plus les actifs et les identités, surtout dans le secteur public, la technologie et la finance.</p><div class="tags"><span>Identités</span><span>Finance</span></div></article>
+<article class="card"><h3>La coopération s'organise</h3><p>Des événements comme le Cyber Africa Forum, reconduit à Cotonou en 2026, réunissent États, banques et opérateurs autour de la réponse aux ransomwares, de la sécurité du cloud et de la coopération entre CERT.</p><div class="tags"><span>Cyber Africa Forum</span><span>CERT</span></div></article>
+</div>
+
+<h3 style="margin:36px 0 12px">Apports pour mon métier</h3>
+<ul class="plain">
+<li>Les attaques visant les identités confirment l'intérêt de ce que j'ai vu en stage : mots de passe administrateur uniques avec LAPS, chiffrement BitLocker, VPN et mises à jour suivies.</li>
+<li>Le déficit de techniciens formés montre que les compétences en systèmes et réseaux sécurisés sont recherchées, notamment en Afrique.</li>
+<li>Je peux réutiliser en laboratoire les mêmes bases (pare-feu, DMZ, filtrage) que celles des projets AP.</li>
+</ul>
+
+<h3 style="margin:36px 0 12px">Sources consultées</h3>
+<ul class="plain">
+<li><a href="https://cybersecuritymag.africa/rapport-2026-interpol-sur-les-cybermenaces-en-afrique/">Rapport 2026 d'INTERPOL sur les cybermenaces en Afrique</a> (Cybersecurity Mag Africa, août 2026)</li>
+<li><a href="https://www.thd.tn/rapport-interpol-2026-lia-accelere-la-transformation-de-la-cybercriminalite-en-afrique/">Rapport INTERPOL 2026 : l'IA accélère la cybercriminalité en Afrique</a> (THD)</li>
+<li><a href="https://www.amelegalconseils.com/rapport-interpol-2026-cybercriminalite-afrique">Rapport INTERPOL 2026 : lecture juridique</a> (AMELEGAL)</li>
+<li><a href="https://digitalmag.ci/quel-est-letat-des-menaces-cyber-en-afrique/">Quel est l'état des menaces cyber en Afrique ?</a> (Digital Mag CI, juin 2026)</li>
+<li><a href="https://cio-mag.com/cybersecurite-2026-le-passage-dun-enjeu-technique-a-un-arbitrage-strategique/">Cybersécurité 2026 : un arbitrage stratégique</a> (CIO Mag, février 2026)</li>
+<li><a href="https://infos-it.fr/nouvelles/9427/cyber-africa-forum-2026-reconduit-a-cotonou-un-signal-fort-pour-la-cybersecurite-en-afrique/">Cyber Africa Forum 2026 à Cotonou</a> (Infos-IT, juillet 2026)</li>
+</ul>
+</div></section>
+
+<section id="documents"><div class="wrap">
+<h2>Documents</h2>
+<p class="sub">Pièces à jour pour l'épreuve E5.</p>
+<div class="cta" style="margin-top:0">
+<a class="btn" href="Rapport_de_stage_Dialla_Ousmane_1SIOA.pdf">Rapport de stage (PDF)</a>
+<a class="btn alt" href="Tableau_Synthese_Dialla_Ousmane_E5.pdf">Tableau de synthèse E5 (PDF)</a>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p><b>Ousmane Dialla</b> – BTS SIO option SISR, Lycée Parc de Vilgenis, Massy. Session 2026.</p>
+<p>Portfolio : <a href="https://diallaousmane.github.io/portofolio/">diallaousmane.github.io/portofolio</a></p>
+</div></footer>
+</body>
+</html>
